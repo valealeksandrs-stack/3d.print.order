@@ -304,29 +304,28 @@
   <div class="wrap">
     <div class="header">
       <div>
-        <p class="header-sub">Place your request</p>
-        <h1 class="header-title">3D Print Order</h1>
+        <p class="header-sub">Iesniedz savu pasūtijumu</p>
+        <h1 class="header-title">3D Print Pasūtijums</h1>
       </div>
-      <div class="badge">FDM / Resin / SLA</div>
     </div>
 
     <div id="orderForm">
 
       <!-- Contact -->
       <div class="section">
-        <div class="section-label">Contact info</div>
+        <div class="section-label">Kontaktinformācija</div>
         <div class="row-2">
           <div class="field">
-            <label for="name">Full name</label>
-            <input type="text" id="name" placeholder="Jane Smith" />
+            <label for="name">Tavs vārds</label>
+            <input type="text" id="name" placeholder="Jānis Ozols" />
           </div>
           <div class="field">
-            <label for="email">Email address</label>
-            <input type="email" id="email" placeholder="jane@email.com" />
+            <label for="email">E-Pasta adrese</label>
+            <input type="email" id="email" placeholder="janisozols@email.com" />
           </div>
         </div>
         <div class="field">
-          <label for="phone">Phone (optional)</label>
+          <label for="phone">Telefona nummurs (optimāli)</label>
           <input type="text" id="phone" placeholder="+371 2X XXX XXX" />
         </div>
       </div>
@@ -339,17 +338,15 @@
           <div class="chip-group" id="materialGroup">
             <div class="chip" data-val="PLA">PLA</div>
             <div class="chip" data-val="PETG">PETG</div>
-            <div class="chip" data-val="ABS">ABS</div>
-            <div class="chip" data-val="TPU (flexible)">TPU</div>
+            <div class="chip" data-val="TPU (flexible)">TPU Gumija</div>
           </div>
         </div>
-
         <div class="field">
-          <label>Color preference</label>
+          <label>Krāsas izvēle</label>
           <div style="display:flex; align-items:center; gap:14px; flex-wrap:wrap;">
             <div class="color-grid" id="colorGrid">
               <div class="color-swatch selected" data-color="White" style="background:#f4f4f2; border-color:#ccc;"></div>
-              <div class="color-swatch" data-color="Black" style="background:#1a1a1a;"></div>
+              <div class="color-swatch" data-color="Black" style="background:#000000;"></div>
               <div class="color-swatch" data-color="Gray" style="background:#888;"></div>
               <div class="color-swatch" data-color="Red" style="background:#d94040;"></div>
               <div class="color-swatch" data-color="Blue" style="background:#2e6dbf;"></div>
@@ -368,113 +365,101 @@
         <div class="section-label">Print settings</div>
         <div class="row-3">
           <div class="field">
-            <label for="infill">Infill %</label>
-            <div class="hint">Structural density</div>
+            <label for="infill">Piepildījums %</label>
             <select id="infill">
-              <option value="15%">15% – Decorative</option>
-              <option value="30%" selected>30% – Standard</option>
-              <option value="50%">50% – Durable</option>
-              <option value="80%">80% – Strong</option>
-              <option value="100%">100% – Solid</option>
+              <option value="15%">15% – Dekoratīvs</option>
+              <option value="30%" selected>30% – Standarts</option>
+              <option value="50%">50% – Izturīgs</option>
+              <option value="80%">80% – Spēcīgs</option>
+              <option value="100%">100% – Zolīds</option>
             </select>
           </div>
           <div class="field">
-            <label for="layer">Layer height</label>
-            <div class="hint">Resolution</div>
+            <label for="layer">Produkta kvalitāte</label>
             <select id="layer">
-              <option value="0.1mm">0.1 mm – Fine</option>
-              <option value="0.2mm" selected>0.2 mm – Standard</option>
-              <option value="0.3mm">0.3 mm – Fast</option>
+              <option value="0.1mm">Smalka un kvalitatīva  </option>
+              <option value="0.2mm" selected>Vidēja</option>
+              <option value="0.3mm">Rupja un ātra</option>
             </select>
           </div>
           <div class="field">
-            <label for="quantity">Quantity</label>
-            <div class="hint">Number of copies</div>
+            <label for="quantity">Daudzums</label>
             <input type="number" id="quantity" value="1" min="1" max="999" />
           </div>
         </div>
-
-        <div class="field">
-          <label>Supports needed?</label>
-          <div class="chip-group" id="supportsGroup">
-            <div class="chip active" data-val="Auto">Auto (let me decide)</div>
-            <div class="chip" data-val="Yes">Yes</div>
-            <div class="chip" data-val="No">No</div>
-          </div>
         </div>
       </div>
 
       <!-- File -->
+
       <div class="section">
-        <div class="section-label">Your file</div>
+        <div class="section-label">Tavs fails</div>
         <div class="field">
           <div class="file-zone" onclick="document.getElementById('fileInput').click()">
             <span class="file-zone-icon">⬡</span>
-            <p>Click to upload your 3D model</p>
+            <p>Spied šeit lau augšuplādetu failu!</p>
             <span>.STL · .OBJ · .3MF · .STEP</span>
             <div class="file-name" id="fileName"></div>
           </div>
           <input type="file" id="fileInput" accept=".stl,.obj,.3mf,.step,.stp" onchange="handleFile(this)" />
         </div>
         <div class="field">
-          <label for="modelDesc">No file yet? Describe your model</label>
-          <textarea id="modelDesc" placeholder="E.g. a 5 cm tall figurine of a cat sitting, no overhangs, ready to print..."></textarea>
+          <label for="modelDesc">Vēl nav fails? Apraksti modeli kuru vēlies izdrukāt, vai ieliec linku ar produktu kuru vēlies izprintēt!</label>
+          <textarea id="modelDesc" placeholder="1:18 BMW E36 M3 Cabriolet Red 1995 "></textarea>
         </div>
-      </div>
+      </div>-
 
       <!-- Dimensions -->
       <div class="section">
-        <div class="section-label">Dimensions (optional)</div>
+        <div class="section-label">Izmēri (optimāli)</div>
         <div class="row-3">
           <div class="field">
-            <label for="dimX">Width (mm)</label>
+            <label for="dimX">Platums (mm)</label>
             <input type="number" id="dimX" placeholder="50" min="1" />
           </div>
           <div class="field">
-            <label for="dimY">Depth (mm)</label>
+            <label for="dimY">Dziļums (mm)</label>
             <input type="number" id="dimY" placeholder="50" min="1" />
           </div>
           <div class="field">
-            <label for="dimZ">Height (mm)</label>
+            <label for="dimZ">Augstums (mm)</label>
             <input type="number" id="dimZ" placeholder="80" min="1" />
           </div>
         </div>
       </div>
 
-      <!-- Extras -->
+      <!-- Papildu informācija -->
       <div class="section">
-        <div class="section-label">Additional details</div>
+        <div class="section-label">Papildu informācija</div>
         <div class="field">
-          <label>Post-processing</label>
+          <label>Pēcapstrāde</label>
           <div class="chip-group" id="postGroup">
             <div class="chip active" data-val="None">None</div>
-            <div class="chip" data-val="Sanding">Sanding</div>
-            <div class="chip" data-val="Painting">Painting</div>
-            <div class="chip" data-val="Acetone smoothing">Acetone smooth</div>
-            <div class="chip" data-val="UV coating">UV coating</div>
+            <div class="chip" data-val="Sanding">Slīpešana</div>
+            <div class="chip" data-val="Painting">Krāsošana</div>
           </div>
         </div>
         <div class="field">
-          <label for="deadline">Deadline / urgency</label>
+          <label for="deadline">Nepieciešamība</label>
           <select id="deadline">
-            <option value="No rush">No rush – standard queue</option>
-            <option value="Within 1 week">Within 1 week</option>
-            <option value="Within 3 days">Within 3 days (rush fee applies)</option>
-            <option value="ASAP">ASAP – contact me first</option>
+            <option value="No rush">Bez steigas </option>
+            <option value="Within 1 week">Nedēļas laikā</option>
+            <option value="Within 3 days">3 dienu laikā</option>
+            <option value="ASAP">Tūlīt pat – vispirms sazinieties ar mani</option>
           </select>
         </div>
         <div class="field">
-          <label for="notes">Anything else?</label>
-          <textarea id="notes" placeholder="Special finishing, reference image links, assembly notes, etc."></textarea>
+          <label for="notes">Vai vēlies vēl kautko?</label>
+          <textarea id="notes" placeholder="Īpaša apdare, atsauces attēlu saites, montāžas piezīmes utt."></textarea>
         </div>
       </div>
 
       <!-- Price estimate -->
       <div class="price-bar">
         <div>
-          <div class="price-label">Estimated total</div>
+          <div class="price-label">Paredzamā kopsumma</div>
           <div class="price-value" id="priceDisplay">—</div>
-          <div class="price-note" id="priceNote">fill in details for estimate</div>
+          <div class="price-note" id="priceNote">aizpildiet detalizētu informāciju tāmei</div>
         </div>
         <div style="font-size:11px; color:var(--text3); max-width:200px; text-align:right; font-family:'DM Mono',monospace; line-height:1.6;">
           Final quote sent<br>after review · prices in EUR
@@ -486,7 +471,7 @@
 
     <div class="success-msg" id="successMsg">
       <h2>Order received!</h2>
-      <p>Thanks for your request. We'll review your files and get back to you with a final quote within 24 hours.</p>
+      <p>Paldies par jūsu pieprasījumu. Mēs pārskatīsim jūsu failus un 24 stundu laikā sazināsimies ar jums, lai sniegtu galīgo cenu.</p>
     </div>
   </div>
 
